@@ -1,17 +1,15 @@
 package model;
 
-import java.time.LocalDate;
-
 public class Libro {
     private String codigo;
     private String isbn;
     private String autor;
     private String editorial;
     private String titulo;
-    private LocalDate fecha;
+    private String fecha;
     private int unidadesVentas;
 
-    public Libro(String codigo, String isbn, String autor, String editorial, String titulo, LocalDate fecha,
+    public Libro(String codigo, String isbn, String autor, String editorial, String titulo, String fecha,
             int unidadesVentas) {
         this.codigo = codigo;
         this.isbn = isbn;
@@ -62,11 +60,11 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

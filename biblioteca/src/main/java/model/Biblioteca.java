@@ -52,9 +52,19 @@ public class Biblioteca {
     public void setPersonas(Collection<Persona> personas) {
         this.personas = personas;
     }
-    
 
-    
+    public Integer consultarPrestamosPorNombreLibro(String nombreLibro) {
+        return (int) prestamos.stream()
+                              .filter(prestamo -> prestamo.getDetallePrestamo().stream()
+                                               .anyMatch(detalle -> detalle.getLibros().getTitulo().equals(nombreLibro)))
+                              .count();
+    }
 
+    public Libro consultarLibroPorCodigo(String codigo) {
+        return libros.stream()
+                     .filter(libro -> libro.getCodigo().equals(codigo))
+                     .findFirst()
+                     .orElse(null);
+    }
 
 }

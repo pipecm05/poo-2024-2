@@ -59,7 +59,7 @@ public class Biblioteca {
                                                .anyMatch(detalle -> detalle.getLibros().getTitulo().equals(nombreLibro)))
                               .count();
     }
-
+//metodo para consultar un libro
     public Libro consultarLibroPorCodigo(String codigo) {
         return libros.stream()
                      .filter(libro -> libro.getCodigo().equals(codigo))
